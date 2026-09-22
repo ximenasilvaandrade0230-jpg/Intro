@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios HTML</title>
+</head>
+<body>
+    <center>
+        <h1>FORMULARIOS HTML</h1>
+        <h3><a href="index.html">REGRESAR</a></h3>
+        <br>
+        <table width="100%" border align="center">
+            <thead>
+                <tr align="center">
+                    <th>NP</th>
+                    <td>NP</td>
+                    <td>Nombre</td>
+                    <td>Ejemplo</td>
+                    <td><h3>Descripcion</h3></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><h3>1</h3></td>
+                    <td>optgroup</td>
+                    <td>
+
+                        <label for="">Carrera</label>
+                        <select name="Carrera" id="">
+                        <optgroup label="Economico-Administrativas">
+                            <option value="">Contabilidad</option>
+                            <option value="">Administracion</option>
+                        </optgroup>
+                        <optgroup label="Tecnologicas">
+                            <option value="">Programacion</option>
+                            <option value="">Mantenimiento</option>
+                        </optgroup>
+                        </select>
+                    </td>
+                    <td>
+                        Etiqueta que sirve para agrupar opciones dentro de una lista despegable
+                    </td>
+                </tr>
+                <tr>
+                    <td><h3>2</h3></td>
+                    <td>meter</td>
+                    <td>
+                        <meter min="0" max="10" low="5" high="8" value="6.0" optimum="10" title="6.0 de 10"></meter>
+                    </td>
+                    <td>Muestra graficamente un valor prederterminado</td>
+                </tr>
+            </tbody>
+
+            <!-- Fila 3 -->
+<tr>
+    <td><h3>3</h3></td>
+    <td>label o Etiqueta</td>
+    <td>
+        <label for="Nombre">Nombre:</label>
+    </td>
+    <td>
+        Sirve para colocar texto estatico dentro de un formulacion como Descripcion y tambien muestra resultados
+    </td>
+    <td><h3>JESUS</h3></td>
+</tr>
+
+<!-- Fila 4 -->
+<tr>
+    <td><h3>4</h3></td>
+    <td>checkbox</td>
+    <td>
+        <input type="checkbox">
+        <input type="checkbox" checked>
+    </td>
+    <td>Casilla de verificación</td>
+    <td><h3>ALEXIS</h3></td>
+</tr>
+
+<!-- Fila 5 -->
+<tr>
+    <td><h3>5</h3></td>
+    <td>file</td>
+    <td>
+        <form action="" enctype="multipart/form-data">
+            Archivo:
+            <input type="file">
+        </form>
+    </td>
+    <td>Sirve para cargar archivos</td>
+    <td><h3>MICH</h3></td>
+</tr>
+
+<!-- Fila 6 -->
+<tr>
+    <td><h3>6</h3></td>
+    <td>boton reset</td>
+    <td>
+        <input type="reset" value="Borrar">
+    </td>
+    <td>Boton para borrar el formulario</td>
+    <td><h3>XIMENA</h3></td>
+</tr>
+
+<!-- Las filas 7 y 8 no están visibles en las imágenes -->
+
+<tr>
+    <td><h3>7</h3></td>
+    <td>legend</td>
+    <td>
+        <fieldset>
+            <legend>TITULO DEL GRUPO</legend>
+            Nombre:
+            <input type="text"><br>
+            Nombre:
+            <input type="text"><br>
+        </fieldset>
+    </td>
+    <td>Muestra el titulo de un seccion</td>
+    <td><h3>ZOE</h3></td>
+</tr>
+<tr>
+    <td><h3>8</h3></td>
+    <td>range</td>
+    <td>
+        <input type="range">
+    </td>
+    <td>Sirve para seleccionar un valor deslizante</td>
+    <td><h3>ABRAHAM</h3></td>
+</tr>
+
+<!-- Fila 9 -->
+<tr>
+    <td><h3>9</h3></td>
+    <td>password</td>
+    <td>Contraseña<input type="password" value="1234567"></td>
+    <td>Campo tipo contraseña</td>
+    <td><h3>HECTOR</h3></td>
+</tr>
+
+<!-- Fila 10 -->
+<tr>
+    <td><h3>10</h3></td>
+    <td>datalist</td>
+    <td>
+        <input type="text" list="comida">
+        <datalist id="comida">
+            <select name="comida2" id="">
+                <option value="Chilaquiles">Chilaquiles</option>
+                <option value="Barbacoa">Barbacoa</option>
+                <option value="Carnitas">Carnitas</option>
+                <option value="Pozole">Pozole</option>
+            </select>
+        </datalist>
+    </td>
+    <td></td>
+    <td><h3>REGINA</h3></td>
+</tr>
+
+<!-- Fila 11 -->
+<tr>
+    <td><h3>11</h3></td>
+    <td>formulario</td>
+    <td>
+        <form action=""></form>
+    </td>
+    <td>sirve para agrupar un formulario</td>
+    <td><h3>CHARBEL</h3></td>
+</tr>
+
+<!-- Fila 12 -->
+<tr>
+    <td><h3>12</h3></td>
+    <td>date</td>
+    <td><input type="date"></td>
+    <td>Input para seleccionar fecha</td>
+    <td><h3>ARYANA</h3></td>
+</tr>
+
+<!-- Fila 13 -->
+<tr>
+    <td><h3>13</h3></td>
+    <td>fieldset</td>
+    <td>
+        <fieldset>
+            <legend>TITULO DEL GRUPO</legend>
+            Nombre:
+            <input type="text"><br>
+            Nombre:
+            <input type="text"><br>
+        </fieldset>
+    </td>
+    <td>Agrupar elementos del formulario</td>
+    <td><h3>GABRIEL</h3></td>
+</tr>
+
+<!-- Fila 14 -->
+<tr>
+    <td><h3>14</h3></td>
+    <td>textarea</td>
+    <td>
+        <textarea name="" id=""></textarea>
+    </td>
+    <td>area de texto</td>
+    <td><h3>NATALIA</h3></td>
+</tr>
+
+<!-- Fila 15 -->
+<tr>
+    <td><h3>15</h3></td>
+    <td>select combo</td>
+    <td>
+        <select name="" id="">
+            <option value="uno">uno</option>
+            <option value="uno">uno</option>
+            <option value="uno">uno</option>
+            <option value="uno">uno</option>
+            <option value="uno">uno</option>
+            <option value="uno">uno</option>
+            <option value="uno">uno</option>
+        </select>
+    </td>
+    <td>Lista desplegable o combo box</td>
+    <td><h3>MAYTE</h3></td>
+</tr>
+
+<!-- Fila 16 -->
+<tr>
+    <td><h3>16</h3></td>
+    <td>color</td>
+    <td>
+        <input type="color">
+    </td>
+    <td>Seleccionar color</td>
+    <td><h3>BRYAN</h3></td>
+</tr>
+
+<!-- Fila 17 -->
+<tr>
+    <td><h3>17</h3></td>
+    <td>url</td>
+    <td>
+        <input type="url" value="http://www.google.com">
+    </td>
+    <td>SE ASIGNA direccion URL o link</td>
+    <td><h3>SANTIAGO</h3></td>
+</tr>
+
+<!-- Fila 18 -->
+<tr>
+    <td><h3>18</h3></td>
+    <td>number</td>
+    <td>
+        <input type="number">
+    </td>
+    <td>Escribir numero de entrada</td>
+    <td><h3>ZURIEL</h3></td>
+</tr>
+
+<!-- Fila 19 -->
+<tr>
+    <td><h3>19</h3></td>
+    <td>hidden</td>
+    <td>
+        <input type="hidden">
+    </td>
+    <td>Campo oculto</td>
+    <td><h3>JESUS</h3></td>
+</tr>
+
+<!-- Fila 20 -->
+<tr>
+    <td><h3>20</h3></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><h3></h3></td>
+</tr>
+        </table>
+    </center>
+    
+</body>
+</html>

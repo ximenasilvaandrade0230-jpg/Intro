@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Atrapa al Gatito</title>
+    <h1>JUEGO CANVAS</h1>
+        <h3><a href="index.html">REGRESAR</a></h3>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffeaf4;
+            text-align: center;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #d63384;
+        }
+
+        .datos {
+            margin: 20px;
+            font-size: 20px;
+        }
+
+        .datos span {
+            margin: 15px;
+        }
+
+        #juego {
+            width: 700px;
+            max-width: 90%;
+            height: 400px;
+
+            margin: auto;
+
+            background-color: white;
+
+            border: 4px solid #ff9ac5;
+            border-radius: 20px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        #gatito {
+            position: absolute;
+
+            font-size: 60px;
+
+            cursor: pointer;
+
+            display: none;
+
+            user-select: none;
+        }
+
+        #gatito:hover {
+            transform: scale(1.2);
+        }
+
+        #mensaje {
+            font-size: 18px;
+            color: #7a3b5c;
+            margin: 15px;
+        }
+
+        #iniciar {
+            background-color: #ff69a6;
+            color: white;
+
+            border: none;
+            border-radius: 15px;
+
+            padding: 15px 30px;
+
+            font-size: 18px;
+
+            cursor: pointer;
+        }
+
+        #iniciar:hover {
+            background-color: #e94b8c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🐱 ATRAPA AL GATITO 🐱</h1>
+
+    <p>
+        Atrapa al gatito antes de que se escape.
+        Si no lo atrapas a tiempo perderás una vida.
+    </p>
+
+    <div class="datos">
+
+        <span>
+            🐟 Puntos:
+            <b id="puntos">0</b>
+        </span>
+
+        <span>
+            ❤️ Vidas:
+            <b id="vidas">3</b>
+        </span>
+
+    </div>
+
+    <button id="iniciar">
+        ▶ Iniciar juego
+    </button>
+
+    <p id="mensaje">
+        Presiona el botón para comenzar.
+    </p>
+
+
+    <div id="juego">
+
+        <div id="gatito">
+            🐱
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // Variables del juego
+        let puntos = 0;
+        let vidas = 3;
+
+        let jugando = false;
+
+        let tiempoEscape;
+
+
+        // Obtenemos elementos del HTML
+        const gatito = document.getElementById("gatito");
+
+        const juego = document.getElementById("juego");
+
+        const puntosTexto = document.getElementById("puntos");
+
+        const vidasTexto = document.getElementById("vidas");
+
+        const mensaje = document.getElementById("mensaje");
+
+        const boton = document.getElementById("iniciar");
+
+
+        // BOTÓN PARA INICIAR EL JUEGO
+        boton.addEventListener("click", function() {
+
+            puntos = 0;
+
+            vidas = 3;
+
+            jugando = true;
+
+
+            puntosTexto.innerHTML = puntos;
+
+            vidasTexto.innerHTML = vidas;
+
+
+            mensaje.innerHTML =
+            "🐱 ¡Atrapa al gatito rápido!";
+
+
+            boton.style.display = "none";
+
+            gatito.style.display = "block";
+
+
+            moverGatito();
+
+        });
+
+
+
+        // FUNCIÓN PARA MOVER AL GATITO
+        function moverGatito() {
+
+            if (jugando == false) {
+                return;
+            }
+
+
+            clearTimeout(tiempoEscape);
+
+
+            // Tamaño disponible
+            let ancho =
+                juego.clientWidth - 70;
+
+            let alto =
+                juego.clientHeight - 70;
+
+
+            // Posiciones aleatorias
+            let posicionX =
+                Math.random() * ancho;
+
+            let posicionY =
+                Math.random() * alto;
+
+
+            // Movemos el gatito
+            gatito.style.left =
+                posicionX + "px";
+
+            gatito.style.top =
+                posicionY + "px";
+
+
+            // Si pasan 2 segundos y no lo atrapas
+            tiempoEscape =
+                setTimeout(function() {
+
+                    perderVida();
+
+                }, 2000);
+
+        }
+
+
+
+        // CUANDO ATRAPAMOS AL GATITO
+        gatito.addEventListener("click", function() {
+
+            if (jugando == false) {
+                return;
+            }
+
+
+            clearTimeout(tiempoEscape);
+
+
+            // Sumamos un punto
+            puntos++;
+
+
+            puntosTexto.innerHTML =
+                puntos;
+
+
+            mensaje.innerHTML =
+                "🐟 ¡Lo atrapaste!";
+
+
+            // Mover nuevamente
+            moverGatito();
+
+        });
+
+
+
+        // PERDER UNA VIDA
+        function perderVida() {
+
+            vidas--;
+
+
+            vidasTexto.innerHTML =
+                vidas;
+
+
+            mensaje.innerHTML =
+                "😹 ¡El gatito se escapó!";
+
+
+            // Revisamos si todavía quedan vidas
+            if (vidas > 0) {
+
+                moverGatito();
+
+            } else {
+
+                terminarJuego();
+
+            }
+
+        }
+
+
+
+        // TERMINAR JUEGO
+        function terminarJuego() {
+
+            jugando = false;
+
+
+            clearTimeout(tiempoEscape);
+
+
+            gatito.style.display =
+                "none";
+
+
+            mensaje.innerHTML =
+                "💔 ¡PERDISTE! Tu puntuación fue: "
+                + puntos;
+
+
+            boton.innerHTML =
+                "🔄 Jugar otra vez";
+
+
+            boton.style.display =
+                "inline-block";
+
+        }
+
+    </script>
+
+</body>
+</html>
